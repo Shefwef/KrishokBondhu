@@ -1,27 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .btn_white {
+    @apply border-white bg-white px-8 py-3 text-gray-50;
   }
+  .btn_white_text {
+    @apply border-white bg-white px-8 py-3 text-gray-900;
+  }
+  .btn_green {
+    @apply border-green-500 bg-green-500 px-8 py-5 text-white;
+  }
+  .btn_dark_green {
+    @apply bg-green-950 px-8 py-4 text-white transition-all hover:bg-black;
+  }
+  .btn_dark_green_outline {
+    @apply border-gray-200 bg-green-900 px-8 py-5 text-white;
+  }
+}
+
+.custom-font {
+  font-family: "Noto Serif Bengali", serif;
 }
