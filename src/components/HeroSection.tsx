@@ -1,6 +1,6 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -10,13 +10,25 @@ const HeroSection = () => {
 
   const textVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeOut' } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   const buttonVariants = {
     hidden: { scale: 0.8, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { duration: 0.5, ease: 'easeInOut', delay: 0.5 } },
-    hover: { scale: 1.1, backgroundColor: '#d9f99d', transition: { duration: 0.3, ease: 'easeInOut' } },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeInOut", delay: 0.5 },
+    },
+    hover: {
+      scale: 1.1,
+      backgroundColor: "#d9f99d",
+      transition: { duration: 0.3, ease: "easeInOut" },
+    },
   };
 
   return (
@@ -40,29 +52,61 @@ const HeroSection = () => {
 
       {/* Animated Content on top of video */}
       <motion.div
-        className="relative flex flex-col items-center justify-center h-full text-center z-20"
+        className="relative flex flex-col items-start justify-center h-full text-left z-20 pl-12" // Left-aligned with padding
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 className="text-6xl font-bold text-white drop-shadow-lg" variants={textVariants}>
-          কৃষক বন্ধু
+        {/* Title with two lines */}
+        <motion.h1
+          className="text-6xl font-sans-semibold text-white drop-shadow-lg glow-effect"
+          variants={textVariants}
+        >
+          Nurturing Agriculture
+          <br />
+          with Intelligent Solutions
         </motion.h1>
-        <motion.p className="mt-4 text-xl text-white drop-shadow-md" variants={textVariants}>
-          Your AI-Powered Agriculture Assistance Platform
+
+        {/* Tagline - slightly different font style */}
+        <motion.p
+          className="mt-4 text-2xl font-medium text-white drop-shadow-md"
+          variants={textVariants}
+        >
+          Preserving the legacy of traditional farming while introducing
+          AI-powered innovations.
         </motion.p>
 
-        <motion.button
-          className="mt-6 px-8 py-4 text-lg font-semibold bg-white rounded-lg shadow-lg hover:bg-green-950 hover:shadow-2xl transition-all"
-          variants={buttonVariants}
-          whileHover="hover"
+        {/* Description - different font */}
+        <motion.p
+          className="mt-2 text-lg font-light text-white drop-shadow-sm max-w-xl "
+          variants={textVariants}
         >
-          Explore Features
-        </motion.button>
+          Our platform delivers precise recommendations, enabling farmers to
+          boost productivity, optimize resources, and embrace a sustainable
+          future.
+        </motion.p>
+
+        {/* Button */}
+        <div className="flex"></div>
+        <div className="flex gap-6 mt-6">
+          <motion.button
+            className="px-8 py-4 text-lg font-semibold bg-amber-300 rounded-full shadow-lg transition-all  hover:bg-green-950 hover:scale-105"
+            variants={buttonVariants}
+            whileHover="hover"
+          >
+            Join Now
+          </motion.button>
+          <motion.button
+            className="px-8 py-4 text-lg font-semibold bg-white rounded-full shadow-lg transition-all  hover:bg-green-950 hover:scale-105"
+            variants={buttonVariants}
+            whileHover="hover"
+          >
+            Explore Features
+          </motion.button>
+        </div>
       </motion.div>
     </section>
   );
 };
 
 export default HeroSection;
-

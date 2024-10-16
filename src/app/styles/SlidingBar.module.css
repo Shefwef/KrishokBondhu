@@ -1,0 +1,37 @@
+.slidingBar {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 2px solid #eee;
+    padding: 10px 0;
+  }
+  
+  .slidingBarContent {
+    display: flex;
+    animation: slide 20s linear infinite;
+  }
+  
+  .slidingItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  
+  .slidingItem img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }

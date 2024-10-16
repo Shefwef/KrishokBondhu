@@ -1,0 +1,51 @@
+.featureSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/feature-bg.png");
+  padding: 50px;
+  background-color: #f7f7f7; /* Minimal background */
+  transition: background-color 0.3s ease;
+}
+
+/* Feature Section Content */
+.featureItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+.textSection {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.title {
+  font-size: 48px; /* Large font for feature name */
+  font-weight: 700;
+  color: #333;
+}
+
+.description {
+  font-size: 18px; /* Smaller font for description */
+  font-weight: 400;
+  color: #555;
+  margin-top: 10px;
+}
+
+.imageContainer {
+  width: 500px;
+  height: 500px;
+  border-radius: 30px 100px 30px 30px; /* Custom shape */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

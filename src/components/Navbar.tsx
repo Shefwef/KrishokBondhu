@@ -22,7 +22,7 @@ const Navbar = () => {
             alt="Logo"
             className="ml-2 rounded-2xl"
           />
-          <span className="text-3xl font-bold text-green-900 custom-font">
+          <span className="text-3xl font-bold text-green-900 custom-font glow-effect-green">
             কৃষক বন্ধু
           </span>
         </div>
