@@ -1,6 +1,7 @@
 import HeroSection from "../components/HeroSection";
 import FeatureSlider from "../components/FeatureSlider";
 import SlidingBar from "@/components/SlidingBar";
+import FAQ from "@/components/faq";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <SlidingBar />
       <FeatureSlider />
+      <FAQ/>
     </>
   );
 }
