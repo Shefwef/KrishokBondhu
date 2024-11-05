@@ -1,8 +1,15 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
-const HeroSection = () => {
+type HeroSectionProps = {
+  onExploreClick: () => void;
+};
+
+const HeroSection = ({ onExploreClick }: HeroSectionProps) => {
+  const router = useRouter();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 1 } },
@@ -52,7 +59,7 @@ const HeroSection = () => {
 
       {/* Animated Content on top of video */}
       <motion.div
-        className="relative flex flex-col items-start justify-center h-full text-left z-20 pl-12" // Left-aligned with padding
+        className="relative flex flex-col items-start justify-center h-full text-left z-20 pl-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -67,7 +74,7 @@ const HeroSection = () => {
           with Intelligent Solutions
         </motion.h1>
 
-        {/* Tagline - slightly different font style */}
+        {/* Tagline */}
         <motion.p
           className="mt-4 text-2xl font-medium text-white drop-shadow-md"
           variants={textVariants}
@@ -76,7 +83,7 @@ const HeroSection = () => {
           AI-powered innovations.
         </motion.p>
 
-        {/* Description - different font */}
+        {/* Description */}
         <motion.p
           className="mt-2 text-lg font-light text-white drop-shadow-sm max-w-xl "
           variants={textVariants}
@@ -86,13 +93,13 @@ const HeroSection = () => {
           future.
         </motion.p>
 
-        {/* Button */}
-        <div className="flex"></div>
+        {/* Buttons */}
         <div className="flex gap-6 mt-6">
           <motion.button
             className="px-8 py-4 text-lg font-semibold bg-amber-300 rounded-full shadow-lg transition-all  hover:bg-green-950 hover:scale-105"
             variants={buttonVariants}
             whileHover="hover"
+            onClick={() => router.push("/sign-up")}
           >
             Join Now
           </motion.button>
@@ -100,6 +107,7 @@ const HeroSection = () => {
             className="px-8 py-4 text-lg font-semibold bg-white rounded-full shadow-lg transition-all  hover:bg-green-950 hover:scale-105"
             variants={buttonVariants}
             whileHover="hover"
+            onClick={onExploreClick}
           >
             Explore Features
           </motion.button>
